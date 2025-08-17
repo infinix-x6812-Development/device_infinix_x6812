@@ -1,0 +1,5 @@
+# System policy for stucklogo service
+allow stucklogo system_file:dir r_dir_perms;
+allow stucklogo system_file:file rx_file_perms;
+allow stucklogo system_data_file:dir create_dir_perms;
+allow stucklogo system_data_file:file create_file_perms;

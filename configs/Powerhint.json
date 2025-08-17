@@ -1,0 +1,181 @@
+{
+  "Nodes": [
+    {
+      "Name": "CPULittleClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/mtk/lcluster_min_freq",
+      "Values": ["3000000", "1800000", "1500000", "800000", "-1"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "CPUBigClusterMinFreq",
+      "Path": "/sys/devices/system/cpu/cpufreq/mtk/bcluster_min_freq",
+      "Values": ["3000000", "1800000", "1500000", "1000000", "-1"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "DRAM_OPP_MIN",
+      "Path": "/proc/perfmgr/boost_ctrl/dram_ctrl/ddr",
+      "Values": ["-1", "0", "1", "2"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SCHED_UCLAMP_MIN_TA",
+      "Path": "/proc/perfmgr/boost_ctrl/eas_ctrl/perfserv_ta_uclamp_min",
+      "Values": ["100", "75", "50", "40", "25", "0"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SCHED_CACHE_AUDIT",
+      "Path": "/sys/module/ca_drv/parameters/enable",
+      "Values": ["2", "1", "0"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "POWER_HINT_EXT_HINT",
+      "Path": "/sys/devices/system/cpu/sched/sched_boost",
+      "Values": ["30", "20", "10", "0"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "POWER_HINT_EXT_HINT_HOLD_TIME",
+      "Path": "/sys/devices/system/cpu/sched/sched_boost_hold_time",
+      "Values": ["35000", "30000", "10000", "6000", "5000", "500", "0"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "FPS_FBT_BHR_OPP",
+      "Path": "/sys/module/fbt_cpu/parameters/bhr_opp",
+      "Values": ["1", "3", "6", "9", "12", "15"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "SCHED_BOOST",
+      "Path": "/sys/devices/system/cpu/sched/sched_boost",
+      "Values": ["1", "0"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "TASK_TURBO",
+      "Path": "/sys/module/task_turbo/parameters/feats",
+      "Values": ["0", "15"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "POWER_HINT_HOLD_TIME",
+      "Path": "/sys/devices/system/cpu/sched/sched_boost_hold_time",
+      "Values": ["6000", "500"],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "POWERHAL_TOUCH_BOOST_NOTIFY_FBC",
+      "Path": "/proc/perfmgr/tchbst/user/usrtch",
+      "Values": ["1", "0"],
+      "ResetOnInit": true
+    }
+    // Add more Nodes from powercontable.xml as needed
+  ],
+  "Actions": [
+    {
+      "PowerHint": "MTKPOWER_HINT_ACT_SWITCH",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_CACHE_AUDIT", "Value": "1"},
+        {"Name": "POWER_HINT_EXT_HINT", "Value": "30"},
+        {"Name": "POWER_HINT_EXT_HINT_HOLD_TIME", "Value": "5000"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_PACK_SWITCH",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_CACHE_AUDIT", "Value": "1"},
+        {"Name": "POWER_HINT_HOLD_TIME", "Value": "500"}
+      ]
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_CACHE_AUDIT", "Value": "1"},
+        {"Name": "TASK_TURBO", "Value": "15"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_EXT_LAUNCH",
+      "Nodes": [
+        {"Name": "FPS_FBT_BHR_OPP", "Value": "15"},
+        {"Name": "DRAM_OPP_MIN", "Value": "1"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "40"},
+        {"Name": "TASK_TURBO", "Value": "15"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_WHITELIST_LAUNCH",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_CACHE_AUDIT", "Value": "1"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_PROCESS_CREATE",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_CACHE_AUDIT", "Value": "1"},
+        {"Name": "FPS_FBT_BHR_OPP", "Value": "15"},
+        {"Name": "SCHED_BOOST", "Value": "1"},
+        {"Name": "POWER_HINT_HOLD_TIME", "Value": "6000"},
+        {"Name": "POWER_HINT_EXT_HINT", "Value": "30"},
+        {"Name": "POWER_HINT_EXT_HINT_HOLD_TIME", "Value": "35000"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_APP_ROTATE",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"},
+        {"Name": "SCHED_UCLAMP_MIN_TA", "Value": "100"},
+        {"Name": "SCHED_BOOST", "Value": "1"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_PMS_INSTALL",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"},
+        {"Name": "DRAM_OPP_MIN", "Value": "0"}
+      ]
+    },
+    {
+      "PowerHint": "MTKPOWER_HINT_APP_TOUCH",
+      "Nodes": [
+        {"Name": "POWERHAL_TOUCH_BOOST_NOTIFY_FBC", "Value": "1"},
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"}
+      ]
+    },
+    {
+      "PowerHint": "INTERACTION",
+      "Nodes": [
+        {"Name": "CPULittleClusterMinFreq", "Value": "3000000"},
+        {"Name": "CPUBigClusterMinFreq", "Value": "3000000"}
+      ]
+    }
+    // ... (expand for more scenarios as needed)
+  ]
+}

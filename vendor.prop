@@ -1,0 +1,139 @@
+# Vendor Properties for Infinix X6812 (MT6768)
+
+# Product Information
+ro.product.board=Infinix-X6812
+ro.board.platform=mt6768
+ro.vendor.mediatek.platform=MT6768
+ro.vendor.tran.version.release=X6812-AOSP
+
+# Graphics
+ro.hardware.egl=meow
+ro.opengles.version=196610
+ro.sf.lcd_density=480
+debug.sf.disable_backpressure=1
+
+# Bluetooth
+ro.vendor.mtk.bt_sap_enable=true
+
+# Gatekeeper/Keymaster
+ro.hardware.kmsetkey=beanpod
+ro.hardware.gatekeeper=beanpod
+ro.vendor.mtk_microtrust_tee_support=1
+ro.vendor.trans_pay_tee=1
+ro.hardware.paytrigger=beanpod
+
+# RIL/Telephony
+persist.radio.multisim.config=tsts
+ro.telephony.sim.count=3
+telephony.active_modems.max_count=3
+persist.vendor.radio.msimmode=tsts
+ro.vendor.radio.max.multisim=tsts
+ro.telephony.default_network=9,9,9,9
+ro.vendor.mtk_protocol1_rat_config=Lf/Lt/W/G
+ro.vendor.mtk_md1_support=9
+ro.vendor.mtk_c2k_lte_mode=0
+ro.vendor.mtk_eccci_c2k=1
+ro.vendor.mtk_ps1_rat=Lf/Lt/W/G
+ro.vendor.mtk_lte_support=1
+ro.vendor.mtk_ril_mode=c6m_1rild
+ro.vendor.md_prop_ver=1
+persist.vendor.radio.fd.counter=150
+persist.vendor.radio.fd.off.counter=50
+persist.vendor.radio.fd.r8.counter=150
+persist.vendor.radio.fd.off.r8.counter=50
+persist.vendor.radio.mtk_dsbp_support=2
+persist.vendor.mtk_ct_volte_support=1
+persist.vendor.radio.mtk_ps2_rat=L/W/G
+persist.vendor.radio.mtk_ps3_rat=W/G
+ro.vendor.mtk_external_sim_support=1
+ro.vendor.mtk_external_sim_only_slots=4
+ro.vendor.mtk_non_dsda_rsim_support=1
+ro.vendor.sim_me_lock_mode=0
+ro.vendor.mtk_world_phone_policy=0
+ro.vendor.mtk_md_world_mode_support=1
+ro.vendor.mtk_sim_hot_swap_common_slot=1
+ro.vendor.sim_refresh_reset_by_modem=1
+ro.vendor.mtk_rild_read_imsi=1
+
+# IMS
+ro.vendor.md_auto_setup_ims=1
+persist.vendor.ims_support=1
+persist.vendor.mtk_dynamic_ims_switch=1
+persist.vendor.mims_support=2
+persist.vendor.mtk_wfc_support=1
+persist.vendor.volte_support=1
+persist.vendor.mtk.volte.enable=1
+persist.vendor.vilte_support=1
+persist.vendor.viwifi_support=1
+
+# Camera
+ro.vendor.mtk_camera_app_version=3
+ro.vendor.camera3.zsl.default=140
+ro.vendor.smvr.p2batch.vga=8
+ro.vendor.smvr.p2batch.hd=4
+vendor.camera.mdp.cz.enable=1
+vendor.camera.mdp.dre.enable=0
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.imgo=7
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=6
+persist.vendor.camera3.pipeline.bufnum.base.imgo=4
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.rrzo=7
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=6
+persist.vendor.camera3.pipeline.bufnum.base.rrzo=4
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.lcso=7
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.lcso=6
+persist.vendor.camera3.pipeline.bufnum.base.lcso=4
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.rsso=7
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=6
+persist.vendor.camera3.pipeline.bufnum.base.rsso=5
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.fdyuv=5
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.fdyuv=5
+ro.vendor.camera_tran_hal_server_support=1
+ro.vendor.camera_tran_fake_stereo_support=1
+ro.mtk_cam_stereo_camera_support=1
+
+# Media
+ro.vendor.mtk_config_max_dram_size=0x800000000
+vendor.mtk.vdec.waitkeyframeforplay=11
+ro.vendor.mtk_audio_alac_support=1
+ro.vendor.mtk_audio_ape_support=1
+ro.vendor.mtk_audio_tuning_tool_ver=V2.2
+ro.vendor.pref_scale_enable_cfg=1
+
+# Memory Management
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heaptargetutilization=0.75
+ro.lmk.kill_heaviest_task=true
+persist.vendor.lmkd_file_low_percentage=15
+ro.vendor.memfusion.support=1
+ro.vendor.memfusion2_1.support=true
+
+# Storage
+ro.vendor.mtk_f2fs_enable=1
+ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
+ro.incremental.enable=yes
+
+# USB
+persist.adb.nonblocking_ffs=1
+
+# WiFi
+ro.vendor.wifi.sap.interface=ap0
+wifi.concurrent.interface=ap0
+ro.vendor.wlan.gen=gen4m
+ro.vendor.mtk_wapi_support=1
+ro.vendor.connsys.dedicated.log=1
+
+# Misc Features
+ro.vendor.mtk_pq_support=2
+ro.vendor.mtk_pq_color_mode=1
+ro.vendor.mtk_blulight_def_support=1
+ro.vendor.mtk_wfd_support=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_fd_support=1
+ro.vendor.mtk_aal_support=1
+ro.vendor.mtk_slow_motion_support=1

@@ -1,0 +1,34 @@
+# Define tranfs type
+type tranfs_file, file_type, data_file_type;
+
+# Allow mounting of tranfs
+allow vold tranfs_file:dir { create_dir_perms mounton };
+allow vold tranfs_block_device:blk_file { read write open getattr };
+allow vold tranfs_block_device:dir { search };
+
+# Allow init to mount tranfs
+allow init tranfs_file:dir { mounton };
+
+# Allow recovery to access tranfs for logs
+allow recovery tranfs_file:dir { create_dir_perms };
+allow recovery tranfs_file:file { create_file_perms };
+
+# Allow system_server to access tranfs
+allow system_server tranfs_file:dir { create_dir_perms };
+allow system_server tranfs_file:file { create_file_perms };
+
+# Allow shell to access tranfs for debugging
+allow shell tranfs_file:dir { read open getattr search };
+allow shell tranfs_file:file { read open getattr };
+
+# Allow backup of tranfs metadata
+allow system_app tranfs_file:dir { read open getattr search };
+allow system_app tranfs_file:file { read open getattr };
+
+# Allow tranlogconfig service to access tranfs
+allow tranlogconfig_exec tranfs_file:dir { create_dir_perms };
+allow tranlogconfig_exec tranfs_file:file { create_file_perms };
+
+# Allow backup key access
+allow system_server tran_backup_key_file:dir { create_dir_perms };
+allow system_server tran_backup_key_file:file { create_file_perms };

@@ -1,0 +1,34 @@
+# Tranfs
+/tranfs(/.*)?                                u:object_r:tranfs_file:s0
+/dev/block/platform/bootdevice/by-name/tranfs u:object_r:tranfs_block_device:s0
+/mnt/vendor/tranfs(/.*)?                     u:object_r:tranfs_file:s0
+/mnt/vendor/tranfs/tran_metadata_encryption_bak(/.*)?   u:object_r:tran_backup_key_file:s0
+/tranfs/tran_metadata_encryption_bak(/.*)?    u:object_r:tran_backup_key_file:s0
+
+# Fingerprint
+/dev/fpsensor                                u:object_r:fpsensor_fp_device:s0
+/dev/goodix_fp                               u:object_r:goodix_fp_device:s0
+/dev/silead_fp                               u:object_r:silead_fpd_device:s0
+/data/silead(/.*)?                           u:object_r:silead_fpd_data_file:s0
+/data/vendor/silead(/.*)?                    u:object_r:silead_fpd_data_file:s0
+/dev/spidev.*                                u:object_r:silead_fpd_device:s0
+/sys/kernel/tran_fp(/.*)?                    u:object_r:sysfs_fp_name_path:s0
+
+# Stucklogo service
+/system/bin/stucklogo                        u:object_r:stucklogo_exec:s0
+
+# Battery aging
+/sys/devices/platform/tran_battery_aging/AGING_FG    u:object_r:sysfs_aging_fg_file:s0
+/sys/devices/platform/tran_battery_aging/AGING_CALCULATE u:object_r:sysfs_aging_calculate_file:s0
+/sys/devices/platform/tran_battery_aging/ESTIMATE_RATE u:object_r:sysfs_aging_estimate_file:s0
+/sys/devices/platform/tran_battery_aging/AGING_RESET u:object_r:sysfs_aging_reset:s0
+/sys/devices/platform/tran_battery_aging/PLUG_TIMES  u:object_r:sysfs_plug_times:s0
+
+# OTG
+/sys/devices/platform/tran_battery/OTG_CTL   u:object_r:sysfs_OTG_CTL_file:s0
+
+# Camera flashlight
+/sys/devices/virtual/torch/torch/torch_level u:object_r:sysfs_torch_file:s0
+/sys/devices/virtual/sub_torch/sub_torch/sub_torch_level u:object_r:sysfs_sub_torch_file:s0
+/sys/devices/virtual/wide_torch/wide_torch/wide_torch_level u:object_r:sysfs_wide_torch_file:s0
+/sys/devices/virtual/main2_light/main2_light/main2_light u:object_r:sysfs_main2_light_file:s0

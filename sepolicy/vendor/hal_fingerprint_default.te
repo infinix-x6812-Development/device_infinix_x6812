@@ -1,0 +1,31 @@
+# Allow fingerprint HAL to access vendor fingerprint devices
+allow hal_fingerprint_default { 
+    fpsensor_fp_device
+    goodix_fp_device 
+    silead_fpd_device 
+    cdfinger_device
+    sf_device
+    sunwave_fp_device
+}:chr_file rw_file_perms;
+
+# Allow fingerprint HAL to access data directories
+allow hal_fingerprint_default silead_fpd_data_file:dir create_dir_perms;
+allow hal_fingerprint_default silead_fpd_data_file:file create_file_perms;
+
+# Allow fingerprint HAL to access sysfs nodes
+allow hal_fingerprint_default sysfs_fp_name_path:dir search;
+allow hal_fingerprint_default sysfs_fp_name_path:file rw_file_perms;
+
+# Allow fingerprint HAL to write to TEE device
+allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
+
+# Allow fingerprint HAL to communicate with hwservicemanager
+allow hal_fingerprint_default hal_fingerprint_hwservice:hwservice_manager find;
+allow hal_fingerprint_default hwservicemanager:binder { call transfer };
+
+# Allow fingerprint HAL to access input devices
+allow hal_fingerprint_default input_device:dir { read open search };
+allow hal_fingerprint_default input_device:chr_file { read write open ioctl };
+
+# Allow fingerprint HAL to use system properties
+set_prop(hal_fingerprint_default, vendor_silead_fp_prop)

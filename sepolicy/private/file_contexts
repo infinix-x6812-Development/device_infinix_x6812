@@ -1,0 +1,7 @@
+# System-level file contexts for Infinix X6812
+
+# Stucklogo service
+/system/bin/stucklogo                      u:object_r:stucklogo_exec:s0
+
+# Custom fonts for Myanmar
+/data/custom_fonts(/.*)?                   u:object_r:system_font_file:s0

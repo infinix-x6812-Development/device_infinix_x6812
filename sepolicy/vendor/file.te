@@ -1,0 +1,51 @@
+# Tranfs related file types
+type tranfs_block_device, dev_type;
+type tranfs_file, file_type, data_file_type;
+type tran_backup_key_file, file_type, data_file_type;
+
+# Fingerprint related file types
+type fpsensor_fp_device, dev_type;
+type goodix_fp_device, dev_type;
+type silead_fpd_device, dev_type;
+type silead_fpd_data_file, file_type, data_file_type;
+type sysfs_fp_name_path, fs_type, sysfs_type;
+type cdfinger_device, dev_type;
+type sf_device, dev_type;
+type sunwave_fp_device, dev_type;
+type fp_ext_svc2_service, service_manager_type;
+
+# Battery related file types
+type sysfs_aging_fg_file, fs_type, sysfs_type;
+type sysfs_aging_calculate_file, fs_type, sysfs_type;
+type sysfs_aging_estimate_file, fs_type, sysfs_type;
+type sysfs_aging_reset, fs_type, sysfs_type;
+type sysfs_plug_times, fs_type, sysfs_type;
+type sysfs_OTG_CTL_file, fs_type, sysfs_type;
+type sysfs_changing_control_file, fs_type, sysfs_type;
+type sysfs_fg_coulomb_file, fs_type, sysfs_type;
+type sysfs_fg_qmx_file, fs_type, sysfs_type;
+type sysfs_tran_bat_temp_file, fs_type, sysfs_type;
+type sysfs_tran_cam_file, fs_type, sysfs_type;
+type sysfs_pcb_thermal_debug_file, fs_type, sysfs_type;
+
+# Flashlight related file types
+type sysfs_torch_file, fs_type, sysfs_type;
+type sysfs_sub_torch_file, fs_type, sysfs_type;
+type sysfs_wide_torch_file, fs_type, sysfs_type;
+type sysfs_main2_light_file, fs_type, sysfs_type;
+
+# Trancare related file types
+type tranlog_data_file, file_type, data_file_type;
+type tranlog_sys_file, fs_type, sysfs_type;
+
+# Charger related file types
+type sysfs_pump_express, fs_type, sysfs_type;
+type sysfs_cc_status, fs_type, sysfs_type;
+type sysfs_limit_current, fs_type, sysfs_type;
+
+# Display related file types
+type sysfs_lcm_hbm_file, fs_type, sysfs_type;
+type sysfs_lcm_aod_file, fs_type, sysfs_type;
+type sysfs_backlight_file, fs_type, sysfs_type;
+type sysfs_thermal_trigger_file, fs_type, sysfs_type;
+type sysfs_real_lcdbrightness_file, fs_type, sysfs_type;

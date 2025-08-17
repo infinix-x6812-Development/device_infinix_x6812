@@ -1,0 +1,6 @@
+# Accessory  detectiony Tpically no key codes needed, but include if headset buttons are supported
+key 226   HEADSETHOOK
+key 164   MEDIA_PLAY_PAUSE
+key 163   MEDIA_NEXT
+key 165   MEDIA_PREVIOUS
+

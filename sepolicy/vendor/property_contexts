@@ -1,0 +1,32 @@
+# Transsion specific properties
+ro.vendor.tran.device.name        u:object_r:vendor_exported_default_prop:s0 exact string
+ro.vendor.tran.hardware           u:object_r:vendor_exported_default_prop:s0 exact string
+ro.vendor.tran.cpu_model          u:object_r:vendor_exported_default_prop:s0 exact string
+
+# Camera properties
+ro.vendor.transsion.camera_watermark       u:object_r:vendor_transsion_camera_watermark_support_prop:s0
+ro.vendor.camera_tran_fake_stereo_support  u:object_r:vendor_mtk_camera_prop:s0
+ro.vendor.camera_tran_switch_band          u:object_r:vendor_mtk_camera_prop:s0
+ro.vendor.camera_tran_hal_server_support   u:object_r:vendor_mtk_camera_prop:s0
+vendor.debug.tran_thirdapk_debug           u:object_r:vendor_mtk_camera_prop:s0
+
+# Trancare properties
+ro.vendor.trancare.support                 u:object_r:vendor_trancare_prop:s0
+ro.vendor.trancarelite.support             u:object_r:vendor_trancare_prop:s0
+ro.vendor.cloudengine.support              u:object_r:vendor_trancare_prop:s0
+init.svc.vendor.tranlogconfig              u:object_r:vendor_trancare_prop:s0
+
+# UX detector properties
+ro.vendor.trancare.uxdetector              u:object_r:vendor_uxdetector_prop:s0
+ro.vendor.trancare.uxdetectorrest          u:object_r:vendor_uxdetectorrest_prop:s0
+
+# Factory reset (meta mode)
+persist.vendor.tran.wipedata               u:object_r:vendor_tran_meta_tst_prop:s0
+
+# Fingerprint properties
+vendor.silead.fp.ext.                      u:object_r:vendor_silead_fp_prop:s0
+
+# Memory fusion properties
+persist.vendor.swapfile_enable              u:object_r:vendor_memfusion_state_prop:s0
+persist.vendor.swapfile_size_mb             u:object_r:vendor_memfusion_size_prop:s0
+persist.vendor.uxcompaction_enable          u:object_r:vendor_uxcompaction_enable_prop:s0

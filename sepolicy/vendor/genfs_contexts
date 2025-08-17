@@ -1,0 +1,39 @@
+# Battery related sysfs nodes
+genfscon sysfs /devices/platform/tran_battery/OTG_CTL u:object_r:sysfs_OTG_CTL_file:s0
+genfscon sysfs /devices/platform/tran_battery/CHG_CAPACITY_TEST u:object_r:sysfs_changing_control_file:s0
+genfscon sysfs /devices/platform/tran_battery/fg_coulomb u:object_r:sysfs_fg_coulomb_file:s0
+genfscon sysfs /devices/platform/tran_battery/BATTERY_QMAX u:object_r:sysfs_fg_qmx_file:s0
+genfscon sysfs /devices/platform/tran_battery/tran_bat_temp u:object_r:sysfs_tran_bat_temp_file:s0
+genfscon sysfs /devices/platform/tran_battery/tran_cam u:object_r:sysfs_tran_cam_file:s0
+genfscon sysfs /devices/platform/tran_battery/pcb_thermal_debug u:object_r:sysfs_pcb_thermal_debug_file:s0
+
+# Battery aging
+genfscon sysfs /devices/platform/tran_battery_aging/AGING_FG u:object_r:sysfs_aging_fg_file:s0
+genfscon sysfs /devices/platform/tran_battery_aging/AGING_CALCULATE u:object_r:sysfs_aging_calculate_file:s0
+genfscon sysfs /devices/platform/tran_battery_aging/ESTIMATE_RATE u:object_r:sysfs_aging_estimate_file:s0
+genfscon sysfs /devices/platform/tran_battery_aging/AGING_RESET u:object_r:sysfs_aging_reset:s0
+genfscon sysfs /devices/platform/tran_battery_aging/PLUG_TIMES u:object_r:sysfs_plug_times:s0
+
+# Flashlight
+genfscon sysfs /devices/virtual/torch/torch/torch_level u:object_r:sysfs_torch_file:s0
+genfscon sysfs /devices/virtual/sub_torch/sub_torch/sub_torch_level u:object_r:sysfs_sub_torch_file:s0
+genfscon sysfs /devices/virtual/wide_torch/wide_torch/wide_torch_level u:object_r:sysfs_wide_torch_file:s0
+genfscon sysfs /devices/virtual/main2_light/main2_light/main2_light u:object_r:sysfs_main2_light_file:s0
+
+# Fingerprint
+genfscon sysfs /kernel/tran_fp u:object_r:sysfs_fp_name_path:s0
+
+# Charger
+genfscon sysfs /devices/platform/charger/chr_type u:object_r:sysfs_pump_express:s0
+genfscon sysfs /devices/platform/charger/Charger_Type u:object_r:sysfs_pump_express:s0
+genfscon sysfs /devices/platform/charger/cc_smt_status u:object_r:sysfs_cc_status:s0
+genfscon sysfs /devices/platform/charger/get_limit_current_city u:object_r:sysfs_limit_current:s0
+
+# Thermal trigger
+genfscon sysfs /kernel/transpt/ttrigger u:object_r:sysfs_thermal_trigger_file:s0
+genfscon sysfs /kernel/transpt/reallbness u:object_r:sysfs_real_lcdbrightness_file:s0
+
+# LCD
+genfscon sysfs /kernel/lcm_hbm/lcm_hbm u:object_r:sysfs_lcm_hbm_file:s0
+genfscon sysfs /kernel/lcm_aod/lcm_aod u:object_r:sysfs_lcm_aod_file:s0
+genfscon sysfs /class/leds/lcd-backlight/brightness u:object_r:sysfs_backlight_file:s0

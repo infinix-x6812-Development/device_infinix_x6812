@@ -1,0 +1,18 @@
+# Allow system server to access battery aging nodes
+allow system_server sysfs_aging_fg_file:file rw_file_perms;
+allow system_server sysfs_aging_calculate_file:file rw_file_perms;
+allow system_server sysfs_aging_estimate_file:file rw_file_perms;
+allow system_server sysfs_aging_reset:file rw_file_perms;
+allow system_server sysfs_plug_times:file rw_file_perms;
+
+# Allow system server to access tranfs
+allow system_server tranfs_file:dir { search read open };
+allow system_server tranfs_file:file { read open getattr };
+
+# Allow system server to access backup keys
+allow system_server tran_backup_key_file:dir { search read open };
+allow system_server tran_backup_key_file:file { read open getattr };
+
+# Allow system server to access flashlight
+allow system_server sysfs_torch_file:file rw_file_perms;
+allow system_server sysfs_sub_torch_file:file rw_file_perms;

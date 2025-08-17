@@ -1,0 +1,14 @@
+# Transsion specific property types
+type vendor_transsion_camera_watermark_support_prop, property_type;
+type vendor_trancare_prop, property_type;
+type vendor_uxdetector_prop, property_type;
+type vendor_uxdetectorrest_prop, property_type;
+type vendor_silead_fp_prop, property_type;
+type vendor_tran_meta_tst_prop, property_type;
+type vendor_memfusion_state_prop, property_type;
+type vendor_memfusion_size_prop, property_type;
+type vendor_uxcompaction_enable_prop, property_type;
+
+# PNPMGR property types
+type vendor_pnpmgr_state_prop, property_type;
+type vendor_pnpmgr_support_prop, property_type;

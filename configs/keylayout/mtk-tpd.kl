@@ -1,0 +1,6 @@
+key 116   POWER         WAKE      	 # Power button (KEY_POWER)
+key 115   VOLUMEUP      WAKE       	 # Volume Up (KEY_VOLUMEUP)
+key 114   VOLUMEDOWN    WAKE      	 # Volume Down (KEY_VOLUMEDOWN)
+key 198   FINGERPRINT   FINGERPRINT      # Fingerprint tap (KEY 198 / 0x00C6)
+key 183   F13           WAKE      	 # Double tap gesture (KEY_F13)
+

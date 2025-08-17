@@ -1,0 +1,14 @@
+# Transsion hardware services
+vendor.transsion.hardware.tne.tneengine::ITne u:object_r:hal_tnev_hwservice:s0
+vendor.transsion.hardware.trancam.trancamserver::ITrancamserver u:object_r:hal_trancamserver_hwservice:s0
+vendor.transsion.hardware.tranlog::ITranLog u:object_r:hal_tranlog_hwservice:s0
+vendor.transsion.hardware.tranlogconfig::ITranLogConfig u:object_r:hal_tranlogconfig_hwservice:s0
+vendor.transsion.hardware.rm::IResMonitor u:object_r:hal_rm_hwservice:s0
+vendor.transsion.hardware.tranHwInfo::ITranHwInfo u:object_r:tran_hwinfo_binder_hwservice:s0
+vendor.transsion.hardware.transtorage.storage::IStorage u:object_r:hal_transtorage_hwservice:s0
+
+# Fingerprint hardware services
+vendor.silead.hardware.fingerprintext::ISileadFingerprint u:object_r:hal_fingerprint_hwservice:s0
+vendor.mediatek.hardware.biometrics.fingerprint::ITranBiometricsFingerprint u:object_r:hal_fingerprint_hwservice:s0
+vendor.sw.swfingerprint::ISwfingerprint u:object_r:hal_swfingerprint_hwservice:s0
+vendor.fpsensor.hardware.fpsensorhidlsvc::IFpsensorHidlSvc u:object_r:fp_ext_svc2_service:s0

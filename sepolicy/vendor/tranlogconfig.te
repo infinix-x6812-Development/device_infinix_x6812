@@ -1,0 +1,27 @@
+# Define tranlogconfig domain
+type tranlogconfig_exec, exec_type, vendor_file_type, file_type;
+type tranlogconfig, domain;
+
+# Allow tranlogconfig to be started by init
+init_daemon_domain(tranlogconfig)
+
+# Allow tranlogconfig to access system properties
+allow tranlogconfig property_socket:sock_file write;
+allow tranlogconfig init:unix_stream_socket connectto;
+
+# Allow tranlogconfig to set vendor properties
+set_prop(tranlogconfig, vendor_trancare_prop)
+
+# Allow tranlogconfig to access log files
+allow tranlogconfig tranlog_data_file:dir create_dir_perms;
+allow tranlogconfig tranlog_data_file:file create_file_perms;
+
+# Allow tranlogconfig to access tranfs
+allow tranlogconfig tranfs_file:dir create_dir_perms;
+allow tranlogconfig tranfs_file:file create_file_perms;
+
+# Allow tranlogconfig to use binder services
+allow tranlogconfig binder_device:chr_file rw_file_perms;
+
+# Allow tranlogconfig to use system services
+allow tranlogconfig system_server:binder call;

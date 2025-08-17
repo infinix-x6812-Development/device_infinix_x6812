@@ -1,0 +1,2 @@
+# Custom system properties
+persist.sys.locale             u:object_r:system_prop:s0

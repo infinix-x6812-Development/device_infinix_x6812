@@ -1,0 +1,24 @@
+# Define stucklogo domain
+type stucklogo_exec, exec_type, vendor_file_type, file_type;
+type stucklogo, domain;
+
+# Allow stucklogo to be started by init
+init_daemon_domain(stucklogo)
+
+# Allow stucklogo to access system properties
+allow stucklogo property_socket:sock_file write;
+allow stucklogo init:unix_stream_socket connectto;
+
+# Allow stucklogo to read and write graphics related files
+allow stucklogo graphics_device:dir search;
+allow stucklogo graphics_device:chr_file rw_file_perms;
+allow stucklogo surfaceflinger_service:service_manager find;
+allow stucklogo system_server:binder call;
+
+# Allow stucklogo to read /proc/pid files
+allow stucklogo system_server:process getpgid;
+allow stucklogo proc:file { read open getattr };
+allow stucklogo proc_stat:file { read open getattr };
+
+# Binder permissions
+allow stucklogo binder_device:chr_file rw_file_perms;

@@ -1,0 +1,20 @@
+# Allow system apps to access battery aging sysfs nodes
+allow system_app sysfs_aging_fg_file:file rw_file_perms;
+allow system_app sysfs_aging_calculate_file:file rw_file_perms;
+allow system_app sysfs_aging_estimate_file:file rw_file_perms;
+allow system_app sysfs_aging_reset:file rw_file_perms;
+allow system_app sysfs_plug_times:file rw_file_perms;
+
+# Allow system services to access battery aging sysfs nodes
+allow system_server sysfs_aging_fg_file:file rw_file_perms;
+allow system_server sysfs_aging_calculate_file:file rw_file_perms;
+allow system_server sysfs_aging_estimate_file:file rw_file_perms;
+allow system_server sysfs_aging_reset:file rw_file_perms;
+allow system_server sysfs_plug_times:file rw_file_perms;
+
+# Allow healthd to access battery aging sysfs nodes
+allow healthd sysfs_aging_fg_file:file rw_file_perms;
+allow healthd sysfs_aging_calculate_file:file rw_file_perms;
+allow healthd sysfs_aging_estimate_file:file rw_file_perms;
+allow healthd sysfs_aging_reset:file rw_file_perms;
+allow healthd sysfs_plug_times:file rw_file_perms;

@@ -1,0 +1,30 @@
+# Product Properties for Infinix X6812 (MT6768)
+
+# Product Identification
+ro.product.product.brand=Infinix
+ro.product.product.device=Infinix-X6812
+ro.product.product.manufacturer=INFINIX MOBILITY LIMITED
+ro.product.product.model=Infinix X6812
+ro.product.product.name=X6812
+
+# Default settings
+ro.config.ringtone=Fairyland.ogg
+ro.config.notification_sound=Seventh_Chords.ogg
+ro.config.alarm_alert=Sky.ogg
+
+# Locales
+persist.sys.timezone=Africa/Brazzaville
+persist.sys.locale=en-US
+
+# Google
+ro.opa.eligible_device=true
+ro.com.google.gmsversion=11_202203
+ro.com.google.acsa=true
+ro.com.google.clientidbase=android-transsion
+ro.com.google.clientidbase.vs=android-transsion-rvo1
+
+# DRM
+drm.service.enabled=true
+
+# A/B OTA
+ro.build.ab_update=true
