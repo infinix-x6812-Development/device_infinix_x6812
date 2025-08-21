@@ -119,17 +119,20 @@ PRODUCT_COPY_FILES += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay_x6812 \
     FrameworksResOverlay_x6812 \
-    SystemUIOverlay_x6812 \
-    SettingsResOverlay_x6812 \
-    TelephonyOverlay_x6812 \
-    TetheringResOverlay_x6812 \
-    WifiResOverlay_x6812 
+    SystemUIResOverlay_x6812 \
+    SettingsProviderResOverlay_x6812 \
+    WifiResOverlay_x6812
     
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay-lineage
+# DEVICE_PACKAGE_OVERLAYS += \
+#    $(DEVICE_PATH)/overlay-lineage
+
+# PRODUCT_PACKAGES += \
+#     libui_shim
+
+# PRODUCT_PACKAGES += \
+#     libsource
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -198,10 +201,7 @@ PRODUCT_PACKAGES += \
     fstab.mt6768.ramdisk \
     init.connectivity.rc \
     init.connectivity.mt6768.rc \
-    init.connectivity.common.rc \
     init.modem.rc \
-    init.insmod.sh \
-    init.insmod.mt6768.cfg \
     init.mt6768.rc \
     init.mt6768.usb.rc \
     init.project.rc \
@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
     ueventd.mt6768.rc
 
 PRODUCT_PACKAGES += \
-    init.recovery.mt6768.rc
+    init.recovery.usb.rc
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge:64 \
@@ -270,6 +270,23 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libapexsupport
 
+# Prebuilt kernel modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules/bt_drv.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/bt_drv.ko \
+    $(LOCAL_PATH)/modules/fmradio_drv.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/fmradio_drv.ko \
+    $(LOCAL_PATH)/modules/fpsgo.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/fpsgo.ko \
+    $(LOCAL_PATH)/modules/gps_drv.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/gps_drv.ko \
+    $(LOCAL_PATH)/modules/kheaders.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/kheaders.ko \
+    $(LOCAL_PATH)/modules/met.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/met.ko \
+    $(LOCAL_PATH)/modules/tran_fre.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/tran_fre.ko \
+    $(LOCAL_PATH)/modules/udc_lib.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/udc_lib.ko \
+    $(LOCAL_PATH)/modules/wlan_drv_gen4m.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wlan_drv_gen4m.ko \
+    $(LOCAL_PATH)/modules/wmt_chrdev_wifi.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wmt_chrdev_wifi.ko \
+    $(LOCAL_PATH)/modules/wmt_drv.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/wmt_drv.ko \
+    $(LOCAL_PATH)/modules/modules.load:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.load \
+    $(LOCAL_PATH)/modules/modules.dep:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.dep \
+    $(LOCAL_PATH)/modules/modules.alias:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.alias \
+    $(LOCAL_PATH)/modules/modules.softdep:$(TARGET_COPY_OUT_VENDOR)/lib/modules/modules.softdep
     
  # Inherit the proprietary files
 $(call inherit-product, vendor/infinix/x6812/x6812-vendor.mk)

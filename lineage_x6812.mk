@@ -21,14 +21,14 @@ PRODUCT_MANUFACTURER := Infinix
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix Hot 11S
 
-PRODUCT_SYSTEM_NAME := Hot 11s
+PRODUCT_SYSTEM_NAME := Hot-11s
 PRODUCT_SYSTEM_DEVICE := x6812
 
 PRODUCT_GMS_CLIENTID_BASE := android-transsion
 
 # Build description and fingerprint
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.build.description=Infinix-x6812-user\ 11\ RP1A.200720.011\ 230921V810\ release-keys \
+#    ro.build.description=Infinix-x6812-user\ 11\ RP1A.200720.011\ 230921V810\ release-keys \
     ro.build.fingerprint=Infinix/x6812-GL/Infinix-x6812:11/RP1A.200720.011/230921V810:user/release-keys \
     ro.product.system.model=$(PRODUCT_SYSTEM_DEVICE) \
     ro.product.system.name=$(PRODUCT_SYSTEM_NAME) \

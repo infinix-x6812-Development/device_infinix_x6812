@@ -24,15 +24,27 @@ namespace_imports = [
     'vendor/infinix/x6812'
 ]
 
+
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
+
+
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    ('libsink',): lib_fixup_remove,
+}
 
 def lib_fixup_replace(new_name: str):
     def _fixup(lib: str, partition: str, *args, **kwargs):
         return new_name
     return _fixup
 
-# --- unified lib_fixups ---
+lib_fixups: lib_fixups_user_type = {
+    **lib_fixups,
+    ('libarmnn',): lib_fixup_replace('libarmnn_vendor'),
+    ('libsink',): lib_fixup_remove,
+}
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     ('libarmnn',): lib_fixup_replace('libarmnn_vendor'),
@@ -40,7 +52,7 @@ lib_fixups: lib_fixups_user_type = {
     ('vendor.mediatek.hardware.videotelephony@1.0',): lib_fixup_vendor_suffix,
 }
 
-# --- blob fixups ---
+
 blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libsink.so': blob_fixup()
         .add_needed('libaudioclient_shim.so'),
@@ -62,33 +74,31 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libutils.so', 'libutils-v32.so'),
     ('vendor/lib64/lib3a.flash.so', 'vendor/lib64/libSQLiteModule_VER_ALL.so'): blob_fixup()
         .add_needed('liblog.so'),
-    'vendor/lib64/libmnl.so': blob_fixup()
+    'vendor/lib64/libmnl.so' : blob_fixup()
         .add_needed('libcutils.so'),
-    'vendor/lib64/android.hardware.sensors@2.X-subhal-mediatek.so': blob_fixup()
+    'vendor/lib64/android.hardware.sensors@2.X-subhal-mediatek.so' : blob_fixup()
         .add_needed('android.hardware.sensors@1.0-convert-shared.so'),
-    ('vendor/lib/libnvram.so', 'vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so'): blob_fixup()
+    ('vendor/lib/libnvram.so', 'vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so') : blob_fixup()
         .add_needed('libbase_shim.so'),
-    'vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2': blob_fixup()
+    ('vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2'): blob_fixup()
         .add_needed('libbase_shim.so'),
-    'vendor/lib64/hw/hwcomposer.mt6768.so': blob_fixup()
-        .add_needed('libprocessgroup_shim.so'),
-
-    # --- fix videotelephony dependents ---
-(
-    'system/lib64/libmtk_vt_wrapper.so',
-    'system/lib/libmtk_vt_wrapper.so',
-    'system/lib/libmtk_vt_service.so',
-): blob_fixup()
-    .replace_needed(
-        'vendor.mediatek.hardware.videotelephony@1.0',
-        'vendor.mediatek.hardware.videotelephony@1.0_vendor'
-    )
-    .replace_needed(
-        'vendor.mediatek.hardware.videotelephony@1.0.so',
-        'vendor.mediatek.hardware.videotelephony@1.0_vendor.so'
-    ),
+    'vendor/lib64/hw/hwcomposer.mt6768.so' : blob_fixup()
+        .add_needed('libprocessgroup_shim.so')
 
 }
+
+blob_fixups: blob_fixups_user_type = {
+    **blob_fixups,
+    ('vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so',): blob_fixup()
+        .replace_needed(
+            'vendor.mediatek.hardware.videotelephony@1.0.so',
+            'vendor.mediatek.hardware.videotelephony@1.0_vendor.so'
+        ),
+
+
+
+    
+}  # fmt: skip
 
 module = ExtractUtilsModule(
     'x6812',
@@ -102,4 +112,3 @@ module = ExtractUtilsModule(
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)
     utils.run()
-

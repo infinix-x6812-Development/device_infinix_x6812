@@ -48,6 +48,10 @@ on post-fs-data
     setprop ro.vendor.dts.licensepath "/vendor/etc/dts/"
     setprop ro.vendor.dts.cfgpath "/vendor/etc/dts/"
 
+# === Load kernel modules ===
+    exec u:r:init:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules $(cat /vendor/lib/modules/modules.load)
+
+
 on init
     # Refer to http://source.android.com/devices/tech/storage/index.html
     # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through

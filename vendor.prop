@@ -1,10 +1,13 @@
 # Vendor Properties for Infinix X6812 (MT6768)
 
-# Product Information
-ro.product.board=Infinix-X6812
-ro.board.platform=mt6768
-ro.vendor.mediatek.platform=MT6768
-ro.vendor.tran.version.release=X6812-AOSP
+# Audio
+ro.audio.silent=0
+ro.audio.usb.period_us=16000
+persist.vendor.audiohal.besloudness_state=1
+ro.vendor.mtk_audio_alac_support=1
+ro.vendor.mtk_audio_ape_support=1
+ro.vendor.mtk_audio_tuning_tool_ver=V2.2
+ro.vendor.mtk_besloudness_support=1
 
 # Graphics
 ro.hardware.egl=meow
